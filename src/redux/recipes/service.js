@@ -1,5 +1,6 @@
+const API_URL = 'https://node-full-recipe-app.herokuapp.com/';
 const getRecipes = async (token) => {
-    const response = await fetch('http://localhost:3001/recipes', {
+    const response = await fetch(API_URL + 'recipes', {
         method: 'GET',
         headers: {
             Authorization: `Bearer ${token}`,
@@ -12,7 +13,7 @@ const getRecipes = async (token) => {
 
 const addRecipe = async (recipe, token) => {
     console.log(recipe);
-    const response = await fetch('http://localhost:3001/recipes', {
+    const response = await fetch(API_URL + 'recipes', {
        method: 'POST',
        headers: {
         Authorization: `Bearer ${token}`,
@@ -33,7 +34,7 @@ const addRecipe = async (recipe, token) => {
 
 const deleteRecipe = async (recipeId) => {
     console.log(recipeId);
-    const response = await fetch('http://localhost:3001/recipes/' + recipeId, {
+    const response = await fetch(API_URL + 'recipes/' + recipeId, {
         method: 'DELETE'
     });
 
@@ -48,7 +49,7 @@ const deleteRecipe = async (recipeId) => {
 };
 
 const updateRecipe = async (recipeAndId) => {
-    const response = await fetch('http://localhost:3001/recipes/' + recipeAndId._id, {
+    const response = await fetch(API_URL + 'recipes/' + recipeAndId._id, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -67,14 +68,14 @@ const updateRecipe = async (recipeAndId) => {
 }
 
 const getDetails = async () => {
-    const response = await fetch('http://localhost:3001/recipes/details/list', {
+    const response = await fetch(API_URL + 'recipes/details/list', {
         method: 'GET'
     });
     return response.json();
 };
 
 const filterRecipeByLikes = async (opAndNum) => {
-    const response = await fetch('http://localhost:3001/recipes/filter/byLikes/' + opAndNum.operation + '/' + opAndNum.num, {
+    const response = await fetch(API_URL + 'recipes/filter/byLikes/' + opAndNum.operation + '/' + opAndNum.num, {
         method: 'GET'
     });
     const data = await response.json();
@@ -83,7 +84,7 @@ const filterRecipeByLikes = async (opAndNum) => {
 }
 
 const incLikes = async (recipeId) => {
-    const response = await fetch('http://localhost:3001/recipes/likes/inc/' + recipeId, {
+    const response = await fetch(API_URL + 'recipes/likes/inc/' + recipeId, {
         method: 'PUT'
     });
 
