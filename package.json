@@ -1,6 +1,5 @@
 {
-  "homepage": "http://Nick-zhen.github.io/Recipe-full-stack-app",
-  "name": "a2",
+  "name": "recipe-app-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
