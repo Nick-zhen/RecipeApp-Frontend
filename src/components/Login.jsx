@@ -29,7 +29,7 @@ export default function Login() {
       }
   
       if (isSuccess || user) {
-        navigate('/')
+        navigate('/recipes')
       }
   
       dispatch(reset())

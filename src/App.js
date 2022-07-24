@@ -15,8 +15,7 @@ function App() {
           <div className='container'>
           <Header />
           <Routes>
-          
-            <Route path='/' element={<RecipeBody />} />
+            <Route path='/recipes' element={<RecipeBody />} />
 
             <Route path='/login' element={<Login />} />
             

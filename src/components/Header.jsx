@@ -11,13 +11,15 @@ export default function Header() {
     const onLogout = () => {
       dispatch(logout())
       dispatch(reset())
-      navigate('/')
+      navigate('/login')
     }
 
   return (
     <header className='header'>
         <div className='logo'>
-            <Link to='/'>RecipeSetter</Link>
+          {
+            user ? (<Link to='/recipes'>RecipeSetter</Link>) : (<Link to='/login'>RecipeSetter</Link>)
+          }
         </div>
         <ul>
         {user ? (
